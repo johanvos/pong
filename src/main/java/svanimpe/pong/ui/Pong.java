@@ -21,12 +21,14 @@ package svanimpe.pong.ui;
 import javafx.application.Application;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.transform.Scale;
 import javafx.scene.transform.Transform;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import svanimpe.pong.Game;
 
@@ -37,7 +39,12 @@ public class Pong extends Application
     @Override
     public void start(Stage stage)
     {
+        Screen screen = Screen.getPrimary();
+        Rectangle2D b = screen.getVisualBounds();
         Font.loadFont(getClass().getResource("/arcade-normal.ttf").toExternalForm(), 0); /* Font family 'Arcade Normal' in CSS. */
+        
+        WIDTH = b.getWidth();
+        HEIGHT = b.getHeight();
         
         final Game game = new Game(WINNING_SCORE);
         

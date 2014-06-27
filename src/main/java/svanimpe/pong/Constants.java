@@ -35,8 +35,8 @@ public class Constants
      * Total size of the game, including margins. This size is fixed but the game will be scaled to
      * fill the available space.
      */
-    public static final double WIDTH = 568;
-    public static final double HEIGHT = 320;
+    public static double WIDTH = 568;
+    public static double HEIGHT = 320;
     
     /*
      * Size of the margins around the playing field.
